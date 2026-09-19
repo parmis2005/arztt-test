@@ -26,10 +26,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -99,6 +95,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setOpen(false)}
                 className={`rounded-lg px-3 py-3 text-base font-medium ${
                   pathname === link.href
                     ? "bg-sand text-primary"
@@ -112,6 +109,7 @@ export default function Navbar() {
           <div className="mt-4 flex flex-col gap-3">
             <a
               href={practice.phoneHref}
+              onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-2 rounded-full border border-line px-5 py-3 text-sm font-semibold text-ink"
             >
               <Phone className="h-4 w-4" />
@@ -119,6 +117,7 @@ export default function Navbar() {
             </a>
             <Link
               href="/kontakt#termin"
+              onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white"
             >
               <CalendarClock className="h-4 w-4" />

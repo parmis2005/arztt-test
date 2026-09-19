@@ -8,8 +8,9 @@ export default function CTASection() {
     <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
       <FadeIn>
         <div className="relative overflow-hidden rounded-3xl bg-primary px-8 py-16 text-center sm:px-16">
-          <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/30 blur-3xl" />
+          <div className="glow-orb animate-float-slower pointer-events-none absolute -left-24 -top-24 h-72 w-72 bg-white/15" />
+          <div className="glow-orb animate-drift pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 bg-accent/40" />
+          <div className="grain-overlay" />
 
           <h2 className="relative font-display text-3xl font-bold text-white sm:text-4xl">
             Bereit für Ihren nächsten Termin?

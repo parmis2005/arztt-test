@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle, Star } from "lucide-react";
+import { ArrowRight, PlayCircle, Star, ChevronDown } from "lucide-react";
 import { heroVideoSrc, stats, doctors } from "@/lib/data";
+import Counter from "@/components/Counter";
 
 export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden bg-ink">
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full animate-kenburns object-cover"
         autoPlay
         muted
         loop
@@ -21,6 +22,10 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b1e1c]/80 via-[#0b1e1c]/55 to-[#0b1e1c]/90" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0b1e1c]/70 via-transparent to-transparent" />
 
+      <div className="glow-orb animate-float-slower h-96 w-96 -left-20 top-10 bg-primary-light/25" />
+      <div className="glow-orb animate-drift h-80 w-80 right-0 bottom-0 bg-accent/20" />
+      <div className="grain-overlay" />
+
       <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-5 pb-16 pt-28 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pt-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +33,10 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400" />
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
             Neue Patient:innen herzlich willkommen
           </div>
 
@@ -93,7 +101,7 @@ export default function Hero() {
             {stats.map((s) => (
               <div key={s.label} className="text-white">
                 <div className="font-display text-2xl font-bold sm:text-3xl">
-                  {s.value}
+                  <Counter value={s.value} />
                 </div>
                 <div className="mt-1 text-xs text-white/70 sm:text-sm">
                   {s.label}
@@ -103,6 +111,16 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-white/50 sm:flex"
+      >
+        <span className="text-[11px] uppercase tracking-[0.2em]">Entdecken</span>
+        <ChevronDown className="h-4 w-4 animate-bounce-y" />
+      </motion.div>
     </section>
   );
 }

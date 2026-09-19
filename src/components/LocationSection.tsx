@@ -81,8 +81,10 @@ export default function LocationSection() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="h-[420px] overflow-hidden rounded-3xl border border-line shadow-sm lg:h-full">
-            <PracticeMapLoader />
+          <div className="relative h-[420px] rounded-3xl bg-gradient-to-br from-primary/30 via-accent/20 to-primary-light/30 p-[2px] shadow-lg shadow-primary/10 lg:h-full">
+            <div className="h-full w-full overflow-hidden rounded-[calc(1.5rem-2px)]">
+              <PracticeMapLoader />
+            </div>
           </div>
         </FadeIn>
       </div>

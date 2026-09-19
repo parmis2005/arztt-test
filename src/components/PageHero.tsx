@@ -11,8 +11,9 @@ export default function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-ink pb-20 pt-32">
-      <div className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-primary/30 blur-[100px]" />
-      <div className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-accent/20 blur-[100px]" />
+      <div className="glow-orb animate-float-slower pointer-events-none absolute -left-32 top-0 h-96 w-96 bg-primary/30" />
+      <div className="glow-orb animate-drift pointer-events-none absolute -right-24 bottom-0 h-72 w-72 bg-accent/25" />
+      <div className="grain-overlay" />
       <div className="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
         <FadeIn>
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-light">

@@ -7,7 +7,7 @@ export default function DoctorGrid({ withBio = false }: { withBio?: boolean }) {
       {doctors.map((doctor, i) => (
         <FadeIn key={doctor.slug} delay={i * 0.08}>
           <div className="group h-full overflow-hidden rounded-2xl border border-line bg-white transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
-            <div className="relative h-64 w-full overflow-hidden">
+            <div className="shine-sweep relative h-64 w-full overflow-hidden">
               <img
                 src={doctor.image}
                 alt={doctor.name}

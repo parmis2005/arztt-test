@@ -4,8 +4,11 @@ import { galleryImages } from "@/lib/data";
 
 export default function Gallery() {
   return (
-    <section className="bg-ink py-24">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+    <section className="relative overflow-hidden bg-ink py-24">
+      <div className="glow-orb animate-float-slower pointer-events-none absolute -left-24 top-1/3 h-96 w-96 bg-primary/20" />
+      <div className="glow-orb animate-drift pointer-events-none absolute -right-24 bottom-0 h-80 w-80 bg-accent/15" />
+      <div className="grain-overlay" />
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Einblicke"
           title="Ein Rundgang durch AVEA"
@@ -20,7 +23,7 @@ export default function Gallery() {
               className={i === 0 ? "col-span-2 row-span-2" : ""}
             >
               <div
-                className={`group relative overflow-hidden rounded-2xl ${
+                className={`group shine-sweep relative overflow-hidden rounded-2xl ${
                   i === 0 ? "h-full min-h-[280px]" : "h-[180px] lg:h-[260px]"
                 }`}
               >

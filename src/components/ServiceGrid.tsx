@@ -34,14 +34,14 @@ export default function ServiceGrid({ limit }: { limit?: number }) {
               href={`/leistungen#${service.slug}`}
               className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="relative h-44 w-full overflow-hidden">
+              <div className="shine-sweep relative h-44 w-full overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/90 text-primary backdrop-blur-sm">
+                <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/90 text-primary shadow-[0_0_0_0_rgba(255,107,74,0)] backdrop-blur-sm transition-shadow duration-300 group-hover:shadow-[0_0_0_6px_rgba(255,107,74,0.18)]">
                   <Icon className="h-5 w-5" />
                 </div>
               </div>
